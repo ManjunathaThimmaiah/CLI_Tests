@@ -16,6 +16,9 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
 
+      - name: Install Taskwarrior
+        run: sudo apt-get update && sudo apt-get install -y taskwarrior
+
       - name: setup python
         uses: actions/setup-python@v2
         with:

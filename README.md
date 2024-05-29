@@ -107,5 +107,12 @@ The workflow is triggered on every push and pull request to the `main` branch. I
 
 5. **List Tasks (Confirm the Task is Deleted)**
    - Action: Retrieve the list of tasks once more.
-   - Expected Result: The response status code is 200 OK, and the list no longer includes the deleted task. Verify that the number of tasks has returned to the initial count.  
+   - Expected Result: The response status code is 200 OK, and the list no longer includes the deleted task. Verify that the number of tasks has returned to the initial count.
+
+### Improvements:
+1. Error Handling and Assertions: Improve the handling of errors and provide more informative assertions.
+2. Setup and Teardown: Use setUp and tearDown methods to prepare and clean up any state before and after tests.
+3. Parameterized Tests: Use parameterized tests to run the same test with different inputs.
+4. Environment Configuration: Externalize configuration to make the tests more flexible.
+5. Logging Enhancements: Add more detailed logging to aid in debugging.     
 

@@ -82,3 +82,30 @@ The workflow is triggered on every push and pull request to the `main` branch. I
 4. Commit your changes (`git commit -m 'Add some feature'`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Create a new Pull Request.
+
+
+
+### Scenario 1: Add cart, update the cart, Delete the cart
+
+`tests/test_integration.py`
+
+1. **List Tasks (Initial State)**
+   - Action: Retrieve the list of existing tasks.
+   - Expected Result: The response status code is 200 OK, and the list of tasks is retrieved successfully. Note the initial number of tasks.
+
+2. **Add a New Task**
+   - Action: Create a new task with specific details such as title, description, and due date.
+   - Expected Result: The response status code is 201 Created, and the task data returned matches the input payload. Note the ID of the newly created task.
+  
+3. **List Tasks (Confirm the New Task is Added)**
+   - Action: Retrieve the list of tasks again.
+   - Expected Result: The response status code is 200 OK, and the list now includes the newly added task. Verify that the number of tasks has increased by one compared to the initial state.
+     
+4. **Delete the Added Task**
+   - Action: Delete the newly added task using its ID.
+   - Expected Result: The response status code is 200 OK, confirming the task was deleted successfully.           
+
+5. **List Tasks (Confirm the Task is Deleted)**
+   - Action: Retrieve the list of tasks once more.
+   - Expected Result: The response status code is 200 OK, and the list no longer includes the deleted task. Verify that the number of tasks has returned to the initial count.  
+
